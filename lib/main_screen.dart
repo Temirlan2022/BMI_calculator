@@ -45,14 +45,14 @@ class _MainScreenState extends State<MainScreen> {
   }
 
   String calculateBMI(int ves, int height) {
-    double BMI = ves / pow(height / 100 ,2);
+    double BMI = ves / pow(height / 100, 2);
     return BMI.toStringAsFixed(1);
   }
 
   String getInterpretation(double BMI) {
     if (BMI >= 25) {
       return 'У вас вес высше нормы. Старайтесь больше заниматься спортом';
-    } else if (BMI > 18.5) {
+    } else if (BMI > 18.0) {
       return 'Ваш рост с весом соответствует. Вы молодец';
     } else {
       return 'У вас вес ниже нормы, старайтесь есть чаще';
@@ -61,7 +61,8 @@ class _MainScreenState extends State<MainScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold( backgroundColor: inActiveColor,
+    return Scaffold(
+      backgroundColor: Colors.black,
       appBar: AppBar(
           title: const Text(
             'BMI CALCULATOR',
